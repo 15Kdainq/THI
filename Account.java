@@ -23,9 +23,14 @@ public class Account {
 
             System.out.println("accNumber is: ");
             int accNumber = Integer.parseInt(ip.nextLine());
-//        kiểm tra điều kiện có 6 ký tự và bắt đầu bằng 100
-            this.accNumber = accNumber;
-
+            if (accNumber>=100000 && accNumber<101000){
+                this.accNumber = accNumber;
+            }else{
+                isValid = false;
+                System.out.println("Please re-enter accNumber (accNumber must be a positive number with 6 digits and starts with ‘100’ ):");
+                continue;
+            }
+            
             System.out.println("amount is: ");
             long amount = Long.parseLong(ip.nextLine());
             this.amount = amount;
